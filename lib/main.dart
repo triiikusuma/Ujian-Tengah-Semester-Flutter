@@ -36,21 +36,39 @@ class _MyAppState extends State<MyApp> {
       theme: _iconBool ? _darkTheme : _lightTheme,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Biodata Mahasiswa"),
+          title: const Text("BIODATA MAHASISWA"),
           backgroundColor: Colors.blue,
           centerTitle: true,
-          actions: [
-            IconButton(
+          leading: IconButton(
               onPressed: () {
                 setState(() {
                   _iconBool = !_iconBool;
                 });
               },
               icon: Icon(_iconBool ? _iconDark : _iconLight),
-            ),
-          ],
+            ),  
+      ),
+      body: Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: <Widget>[
+      Padding(padding: EdgeInsets.all(8.6),
+      child:  Image(
+        image: AssetImage(
+          "assets/kartu_mahasiswa.png"),
+          ),
+      ),
+      Card(
+        color: Colors.lightBlue,
+        child: Padding(
+          padding: EdgeInsets.all(15.15),
+            child: Text("SELAMAT DATANG DI BIODATA MAHASISWA"),
+          )
+      ),
+    ]
+      ),
       )
       )
       );
-  }}
-        
+  }
+}
